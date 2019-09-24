@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head> <meta charset="utf-8" >
+  </head>
+ 
+  <body>
+
+  <h1> FORMULAIRE </h1>
+  <form action="#formSlide" method="get">
+    
+    <ol>
+	<li> H/F? : 
+	   <input name="genre" id="homme" value="h" type="radio">homme
+	   <input name="genre" id="femme" value="f" type="radio">femme
+	</li>
+	<li> 
+	  <label for="prenom">Prénom:
+	  <input name="prenom" id="name">
+	</li>
+	<li> 
+	  <label for="nom">Nom:
+	  <input name="nom" id="surname" >
+	</li>
+	<li> 
+	  <label for="ville">Ville:
+	  <input name="ville" id="city" >
+	</li>
+	<li> 
+	  <label for="postal">Code Postal:
+	  <input name="postal" id="zipcode">
+	</li>
+	<li> J'aime: 
+	   <input name="pat" id="patate" value="pc" type="checkbox" checked>les patates
+	   <input name="ban" id="bannane" value="mat" type="checkbox" checked>les bannanes
+	   <input name="abricots" id="abricot" value="it" type="checkbox" checked>les abricots
+	</li>
+	<li> Matière préféré : 
+	   <input name="matiere" id="physique" value="pc" type="radio">Physique-chimie
+	   <input name="matiere" id="math" value="mat" type="radio">Mathématiques
+	   <input name="matiere" id="info" value="it" type="radio">Informatique
+	</li>
+	<li> Etes-vous satisfait?(de 1 à 6) : 
+	   <input name="satisfaction" id="s1" value="1" type="radio">1
+	   <input name="satisfaction" id="s2" value="2" type="radio">2
+	   <input name="satisfaction" id="s3" value="3" type="radio">3
+	   <input name="satisfaction" id="s4" value="4" type="radio">4
+	   <input name="satisfaction" id="s5" value="5" type="radio">5
+	   <input name="satisfaction" id="s6" value="6" type="radio">6
+	</li>
+	<li>
+	  <input value="valider" type="submit">
+	  <input value="reinisitaliser" type="reset">
+	</li>
+
+
+    </ol>
+  <form>	
+  </body>
+</html>

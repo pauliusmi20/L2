@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+<body>
+  <table>
+   <tr>
+	<th> <strong>Photo</strong></th>
+	<th><strong>Nom</strong> </th>
+	<th><strong>Pourquoi est-il féroce?</strong> </th>
+	<th> <strong>Habitat</strong></th>	
+	<th> <strong>Taille</strong></th>	
+	<th> <strong>Poids</strong></th>
+   </tr>
+   <tr>
+	<th> <img > </th>
+	<th> <ul></ul> </th>
+	<th> </th>
+	<th>50-115cm</th>	
+	<th>21-45kg</th>
+   </tr>
+   <tr>
+	<th><img > </th>
+	<th> </th>
+	<th> </th>
+	<th> </th>	
+	<th> </th>
+   </tr>
+   <tr>
+	<th><img > </th>
+	<th> </th>
+	<th> </th>
+	<th> </th>	
+	<th> </th>
+   </tr>
+
+  </table>
+
+</body>
+
+
+</html>

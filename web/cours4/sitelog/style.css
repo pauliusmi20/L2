@@ -1,0 +1,13 @@
+body
+{
+	
+	background-color: blue;
+}
+.contenu
+{
+	color: white;
+	display: flex; 
+	align-items: center;
+	flex-direction: column;
+	justify-content: stretch;
+}

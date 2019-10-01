@@ -24,10 +24,14 @@ public class Vecteur
 		return "x: " + this.x + "y: "+ this.y; 
 	}
 	
+	public double conversionDegToRad(double angle)
+	{
+		return (double) angle*180D / Math.PI;
+	}
+	
 	public Vecteur rotation(Vecteur v1, double angle)
 	{
 		Vecteur v2 = new Vecteur();
-		angle = (double) angle*180D / Math.PI;
 		
 		v2.x = v1.x * Math.cos(angle) - v1.y * Math.sin(angle);
 		v2.y = v1.x * Math.sin(angle) + v1.y * Math.cos(angle);

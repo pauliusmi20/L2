@@ -13,6 +13,28 @@ public class Vecteur
 		this.y = b;
 	}
 	
+	public void setX(double x)
+	{
+		this.x = x;
+	}
+
+	public void setY(double y)
+	{
+		this.y = y;
+	}
+
+
+	public double getX()
+	{
+		return this.x ;
+	}
+
+	public double getY()
+	{
+		return this.y;
+	} 
+
+	
 	public Vecteur addition(Vecteur v2)
 	{
 	  Vecteur res = new Vecteur(this.x + v2.x,this.y + v2.y); 
@@ -29,12 +51,10 @@ public class Vecteur
 		return (double) angle*180D / Math.PI;
 	}
 	
-	public Vecteur rotation(Vecteur v1, double angle)
+	public void rotation(double angle)
 	{
-		Vecteur v2 = new Vecteur();
-		
-		v2.x = v1.x * Math.cos(angle) - v1.y * Math.sin(angle);
-		v2.y = v1.x * Math.sin(angle) + v1.y * Math.cos(angle);
-
+		this.x = this.x * Math.cos(angle) - this.y * Math.sin(angle);
+		this.y = this.x * Math.sin(angle) + this.y * Math.cos(angle);
+	
 	}
 }

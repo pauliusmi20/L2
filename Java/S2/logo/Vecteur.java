@@ -12,6 +12,10 @@ public class Vecteur
 		this.x = a; 
 		this.y = b;
 	}
+	public Vecteur clone()
+	{
+		return new Vecteur(this.x,this.y);
+	}
 	
 	public void setX(double x)
 	{
@@ -34,11 +38,11 @@ public class Vecteur
 		return this.y;
 	} 
 
-	
+
 	public Vecteur addition(Vecteur v2)
 	{
-	  Vecteur res = new Vecteur(this.x + v2.x,this.y + v2.y); 
-		return res;
+				return new Vecteur(this.x + v2.getX(), this.y + v2.getY() ); 
+
 	}
 	
 	public String toString()
@@ -55,6 +59,5 @@ public class Vecteur
 	{
 		this.x = this.x * Math.cos(angle) - this.y * Math.sin(angle);
 		this.y = this.x * Math.sin(angle) + this.y * Math.cos(angle);
-	
 	}
 }

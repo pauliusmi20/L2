@@ -28,17 +28,14 @@ public class TestTortue {
         Tortue t = new Tortue(g); // direction initiale (1,0),
                                  // position (0,0) = coin haut gauche
 
-       // t.leverStylo(); // ne pas écrire
-       // t.rotation(Math.PI/4); // aller vers le centre (ATTENTION AU SENS DE ROTATION)
+        t.leverStylo(); // ne pas écrire
+        t.rotation(Math.PI/4); // aller vers le centre (ATTENTION AU SENS DE ROTATION)
         t.avancer(200); // approximativement au centre
 
         // Dessin
-      /*  t.baisserStylo();
-        t.avancer(100);
-        t.rotation(Math.PI/4);
-        t.avancer(50);
-*/
-        // Sauver l'image dans un fichier
+        t.baisserStylo();
+				//t.rosace(500);  
+				t.rond(100000);         // Sauver l'image dans un fichier
         try {
             File outputfile = new File("saved.png");
             ImageIO.write(im, "png", outputfile);

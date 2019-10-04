@@ -1,3 +1,8 @@
+
+
+(* isabelle.mounier@lip6.fr *)
+
+
 let xor (a :bool) (b:bool):bool = 	
 	(a || b)&& not(a && b) 
 
@@ -10,16 +15,20 @@ let cmp1 (a:bool) (b:bool):cmp =
 	|(false ,false )-> (false,true,false)
 	|(false , true ) -> (false, false, true)
 
+
 let lex ((a1,a2,a3):cmp)((b1,b2,b3):cmp):cmp =
 	if a1 || (a2 && b1) then (true,false,true)
 	else if a2 && b2 then (false,true,false)
 	else (false,false,true)
+
+
 
 type duet =  bool * bool
 
 type quartet = duet * duet 
 
 type octet = quartet * quartet
+
 
 
 let cmp2 ( (a1 , a2):duet) ((b1 , b2):duet ):cmp = lex (cmp1 a1  b1 ) (cmp1 a2 b2)
@@ -61,5 +70,7 @@ let co (a , b) = ( cq b , cq a )
 let i2ofinale (a:int):octet = co ( i2o  a )
 
 let comparer (a:int)(b:int):cmp  = cmp8 (i2ofinale a ) (i2ofinale b ) 
+
+
 
 

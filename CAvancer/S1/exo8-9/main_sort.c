@@ -1,3 +1,5 @@
+
+
 #include <stdio.h>
 #include "utilitaires_tableaux.h"
 #include "tris.h"
@@ -6,7 +8,9 @@
 
 int main(int argc, char **argv)
 {
-	int *new ,n cpt;;
+  int cpt = compter_lignes(argv[1]) ;
+  int i = 0;	
+  int *new = lire_tableau( argv[1] , &cpt );
 	
 	if(argc < 3){
 		fprintf(stderr, "%s: Nombre d'arguments incorrect (%d)\n", argv[0], argc);
@@ -16,14 +20,16 @@ int main(int argc, char **argv)
 
 
 	for(i=0;i<argc;i++)
-		printf("Argument %d : %s\n", i, argv[i]);
+		printf("Argument %d : %s\n", i, *argv[i]);
+ 
+ 
+  tris(new, &cpt);
 
-
-       *new = lire_tableau(argv[&], &cpt );
-       tris(new, &cpt);
-       ecrire_tableau(argv[2], new , cpt);
-
+ 
+  ecrire_tableau(argv[2], new , cpt );
 
 
 	return (0);
 }
+
+// remcptcave etu  

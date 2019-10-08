@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
+/********************************************************/
+
+
 void echanger_elem_tab(int tab[], int i, int j)
 	{
 	int t = tab[i];
@@ -30,7 +33,13 @@ int *detruire_tableau(int *t) {
   return NULL;
 }
 
+
+
 #define LIGNE_MAX 9999
+
+
+/********************************************************/
+
 
 int compter_lignes(char *nomFichier){
 
@@ -49,6 +58,10 @@ int compter_lignes(char *nomFichier){
 	fclose(pFi);
 	return nbL;
 }
+
+
+/********************************************************/
+
 
 int *lire_tableau(char *nomFichier, int *p_nbVal)
 {
@@ -72,6 +85,8 @@ int *lire_tableau(char *nomFichier, int *p_nbVal)
   return new;
 }
 
+
+/********************************************************/
 
 void ecrire_tableau(char *nomFichier, int *tab, int n){
 

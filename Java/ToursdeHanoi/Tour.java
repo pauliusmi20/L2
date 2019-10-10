@@ -29,7 +29,7 @@ public class Tour
 			this.empiler(temp);
 			}		
 		}
-	}	
+				
 	public String toString(){
 	
 		String temp = "" + this.nom + ": ";	

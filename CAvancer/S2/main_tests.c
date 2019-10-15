@@ -18,25 +18,38 @@ float energie=50;
 
 
 int main(void) {
+	Animal *liste_proie = creer_animal(rand()%(SIZE_X),rand()%(SIZE_Y),energie);
+	Animal *liste_predateur =creer_animal(rand()%(SIZE_X),rand()%(SIZE_Y),energie);
+	int i ;
 	
-  Animal *liste_proie = NULL;
-  Animal *liste_predateur = NULL;
-  int nb_proies = 0, nb_predateurs = 0, temp = rand() % 11 , temp2 = rand() % 11;
-
-			for (int i = temp ; i < temp + NB_PROIES ;  i++)
-				for (int j = temp2 ; j < temp2 + NB_PROIES ;  j++){
-					liste_proie =	ajouter_en_tete_animal(liste_proie, creer_animal(i,j,energie) );
-				}
-			temp =  rand() % 11;
-			temp2 = rand() % 11;					 	
-
-			for (int i = temp ; i < temp + NB_PREDATEURS ;  i++)
-				for (int j = temp2 ; j < temp2 + NB_PREDATEURS ;  j++){
-				liste_predateur = 	liste_predateur = ajouter_en_tete_animal(liste_predateur, creer_animal(i,j,energie) );
-				}
-					liste_proie =	ajouter_en_tete_animal(liste_proie, creer_animal(i,j,energie) );
-									
-    afficher_ecosys(liste_proie,liste_predateur);  
-
+	/* les positions sont aléatoires: ainsi il peux y avoir plusieurs animeaux sur la meme case ce qui signifie que les animeaux seront écrasées. 	*/	
+		
+	for (i = 0; i<NB_PROIES ; i++){
+		ajouter_animal( rand()%(SIZE_X+1),rand()%(SIZE_Y+1),&liste_proie);	 
+	}
+	
+	for (i = 0; i<NB_PREDATEURS ; i++){
+		ajouter_animal( rand()%(SIZE_X+1),rand()%(SIZE_Y+1),&liste_predateur);	 
+	}
+	//TEST ACTIONS
+	for (i = 0; i<10 ; i++){
+		bouger_animaux(liste_proie);
+		bouger_animaux(liste_predateur);
+		afficher_ecosys(liste_proie,liste_predateur);	
+	}
+	printf("XXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX");
+	
+	/** la fonction a l'aire de fonctioner, l'affichage évolue, mais le nb de proies et predateurs reste le meme*/
+	
+	for (i = 0; i<10 ; i++){
+		reproduce(&liste_proie);
+		reproduce(&liste_predateur);
+		afficher_ecosys(liste_proie,liste_predateur);	
+	}
+	
+	//affichage 
+	afficher_ecosys(liste_proie,liste_predateur);	
   return 0;
 }
+
+

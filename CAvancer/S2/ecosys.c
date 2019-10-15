@@ -4,7 +4,6 @@
 #include "ecosys.h"
 
 
-
 Animal *creer_animal(int x, int y, float energie) {
   Animal *na = (Animal *)malloc(sizeof(Animal));
   assert(na);
@@ -26,17 +25,11 @@ Animal *ajouter_en_tete_animal(Animal *liste, Animal *animal) {
   return animal;
 }
 
-
-
-
-
-
-
 void ajouter_animal(int x, int y, Animal **liste_animal) {
 	assert(*liste_animal);
-	if  ( x < 0 || x >= SIZE_X || 
-	 y>=SIZE_Y || y<0 ) return;
-	 
+	if  (	x < 0 	  || x >= SIZE_X || 
+	  		y>=SIZE_Y || y<0 ) return;	 
+	  		
 	*liste_animal = ajouter_en_tete_animal(	*liste_animal, creer_animal(x,y,energie)) ;
 }
 
@@ -89,13 +82,27 @@ unsigned int compte_animal_it(Animal *la) {
 
 
 void bouger_animaux(Animal *la) {
- /* A COMPLETER */
+	assert(la);
+	while(la){
+		la->x = abs( (la->x + la->dir[0]+SIZE_X) % SIZE_X);	
+		la->y = abs( (la->y + la->dir[1]+SIZE_Y) % SIZE_Y);	
+		la = la->suivant;		
+	}
 }
 
-
 void reproduce(Animal **liste_animal) {
- /* A COMPLETER */
-
+	assert(*liste_animal);
+	Animal *an = NULL;
+	
+	Animal *temp = *liste_animal;
+	
+	while(temp){
+		if ( (float) (rand()% RAND_MAX  ) / (float)RAND_MAX < p_reproduce ){
+			an = creer_animal(temp->x ,temp->y,energie);
+			temp = ajouter_en_tete_animal(temp,an);	
+		}
+		temp = temp->suivant ;
+	}
 }
 
 

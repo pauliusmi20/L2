@@ -93,7 +93,7 @@ void bouger_animaux(Animal *la) {
 void reproduce(Animal **liste_animal) {
 	assert(*liste_animal);
 	Animal *an = NULL;
-	
+
 	Animal *temp = *liste_animal;
 	
 	while(temp){
@@ -107,22 +107,57 @@ void reproduce(Animal **liste_animal) {
 
 
 void rafraichir_proies(Animal **liste_proie) {
- /* A COMPLETER */
+	assert(*liste_proie);
+	Animal *temp = *liste_proie;
   /* deplacement et mise a jour de l'energie */
+    bouger_animaux(*liste_proie);
+	while(temp){
+		if (temp->energie >0){
+			temp->energie-=d_proie;
+		}
+		else {
+			enlever_animal(liste_proie, temp); 
+		}
+	}
   /* gestion de la reproduction */
+	reproduce(liste_proie);
 }
 
 
+
 Animal *animal_en_XY(Animal *l, int x, int y) {
- /* A COMPLETER */
-  return NULL;
+	int posx, posy;
+	
+	while(l){
+		posx=l->x;
+		posy=l->y;
+		if (posx==x && posy==y) return l;
+		l=l->suivant;
+	}
+	return NULL;
 } 
 
 
 void rafraichir_predateurs(Animal **liste_predateur, Animal **liste_proie) {
-   /* A COMPLETER */
-  /* deplacement et mise a jour de l'energie */
-  /* gestion de la reproduction */
+	Animal *tmp=*liste_predateur; 
+	float an; 
+	Animal *proie=NULL;
+	while(tmp){
+		
+		proie = animal_en_XY(*liste_proie, tmp->x, tmp->y);
+		tmp->energie -= d_predateur;
+		an=(float)rand()/RAND_MAX;		
+		if(an < p_manger && proie!=NULL){
+			tmp->energie+=proie->energie;	
+			enlever_animal(liste_proie, proie);	
+			   
+		}	
+			
+		tmp=tmp->suivant;
+	}
+	bouger_animaux(*liste_predateur);
+	reproduce(liste_predateur);
+	
 }
 
 

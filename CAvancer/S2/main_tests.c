@@ -39,7 +39,6 @@ int main(void) {
 	}
 	printf("XXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX\nXXXXXXXXXXXXXXXXX");
 	
-	/** la fonction a l'aire de fonctioner, l'affichage évolue, mais le nb de proies et predateurs reste le meme*/
 	
 	for (i = 0; i<10 ; i++){
 		reproduce(&liste_proie);

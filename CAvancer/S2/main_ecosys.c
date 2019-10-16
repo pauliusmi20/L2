@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
 #include "ecosys.h"
 
@@ -20,9 +21,30 @@ float energie=50;
 
 int main(void) {
 
-  	/* A COMPLETER*/
-	/* Ecrire     usleep(T_WAIT); pour ralentir l'affichage*/
+	Animal *liste_proie = creer_animal(rand()%(SIZE_X),rand()%(SIZE_Y),energie);
+	Animal *liste_predateur =creer_animal(rand()%(SIZE_X),rand()%(SIZE_Y),energie);
+	int i ;
+	
+	/* les positions sont aléatoires: ainsi il peux y avoir plusieurs animeaux sur la meme case ce qui signifie que les animeaux seront écrasées. 	*/	
+		
+	for (i = 0; i<NB_PROIES ; i++){
+		ajouter_animal( rand()%(SIZE_X+1),rand()%(SIZE_Y+1),&liste_proie);	 
+	}
+	
+	for (i = 0; i<NB_PREDATEURS ; i++){
+		ajouter_animal( rand()%(SIZE_X+1),rand()%(SIZE_Y+1),&liste_predateur);	 
+	}
 
+	while(1){
+		 if (usleep(T_WAIT)){
+			//fprintf(syntaxe get error)
+			exit(-1);		 
+		 }
+		
+		rafraichir_proies(&liste_proie);
+		rafraichir_predateurs(&liste_predateur,&liste_proie);
+		afficher_ecosys(liste_proie, liste_predateur);
+	}
   return 0;
 }
 

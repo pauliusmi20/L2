@@ -5,33 +5,43 @@
 #include "fonctions_2entiers.h"
 
 void *dupliquer_2int(const void *src) {
-  /* a completer */
-  return NULL; // pour que cela compile
+  double_int *isrc=(double_int *)src;
+  double_int *idst=malloc(sizeof(double_int));
+  if (idst==NULL) {
+    affiche_message("Erreur d'allocation");
+    return NULL;
+  }
+  *idst=*isrc;
+  return (void *)idst;
 }
 
 void copier_2int(const void *src, void *dst) {
-  /* a completer */
+  double_int *isrc=(double_int *)src;
+  double_int *idst=(double_int *)dst;
+  *idst=*isrc;
 }
 
 void detruire_2int(void *data) {
-  /* a completer */
+  free(data);
 }
 
 void afficher_2int(const void *data) {
-  /* a completer */
+  double_int *idata=(double_int *)data;
+  printf("a=%d b=%d",*idata->a,*idata->b);
 }
 
 int comparer_2int(const void *a, const void *b) {
-  /* a completer */
-  return 0; // pour que cela compile
+  int *ia=(int *)a;
+  int *ib=(int *)b;
+  return (*ia>*ib)-(*ia<*ib);
 }
 
 int ecrire_2int(const void *data, FILE *f) {
-  /* a completer */
-  return 0; // pour que cela compile
+  const double_int *idata=(const double_int *)data;
+  return fprintf(f, "%d", *idata->a)&&(fprintf(f, "%d", *idata->b));
 }
 
 void * lire_2int(FILE *f) {
-  /* a completer */
+  
   return NULL; // pour que cela compile
 }

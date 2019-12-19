@@ -7,7 +7,7 @@ body {
 	margin-top: 200px;
 	margin-left: 200px;
 	border: 1px;
-	border-color: #5DBCD2
+	border-color: #fce7d4;
 }
 
 .blockinfo{ 
@@ -15,16 +15,19 @@ body {
 	height: 300px;
 	width: 200px;
 	margin-right: 50px;
-	background-color: #5DBCD2 ;
+	background-color: #fce7d4;
 	float: right;
 	padding-bottom: 50px; 
 }
-
-.blockintro{
-	
+#C{
+	position: center;
 }
 
-.inblock{
+
+.blockinfo{
+	text-align: center;
+}
+.inblock{ 
 	padding-top: 30px;
 
 }
@@ -38,9 +41,8 @@ p{
 	padding-top: 20px;
 }
 
-.sommaire: hover{
- 	color: blue; 
-	text-decoration: underline;
+li:hover{
+	text
 }
 
 #pic {
@@ -52,5 +54,5 @@ p{
 
 .sommaire{
 	display: inline-block;
-	background-color: #5DBCD2  ;
+	background-color: #fce7d4;  
 }

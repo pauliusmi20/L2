@@ -22,13 +22,11 @@ int tab_trie(int tab[], int n)
 	}
 
 int *nouveau_tableau(int n) {
-
   int *new = malloc(sizeof(int)*n);
   return new;
 }
 
 int *detruire_tableau(int *t) {
-
   free(t);
   return NULL;
 }

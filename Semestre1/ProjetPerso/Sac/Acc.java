@@ -14,8 +14,8 @@ abstract public class Acc{
 		numero = cpt;
 		cpt++;
 	}
-	abstract protected  int getPoids();
-	/**
+	protected abstract int getPoids();
+	/*
 	  *remarque: on ne connait pas le poid de cette objet, mais on va redéfinir la méthode get nous même
 	  *cette classe est abstraite elle ne peux instanciee
 	*/

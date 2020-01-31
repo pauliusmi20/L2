@@ -16,7 +16,7 @@ class Sac extends Acc
 	public int size(){
 		return this.tab.length;
 	}
-	public void ajouter(Acc a){
+	public void ajouter(Acc a)throws RuntimeException{
 		for( int i = 0; i< tab.length ; i++){
 			if (tab[i] == null){
 				tab[i] = a;
@@ -37,7 +37,6 @@ class Sac extends Acc
 		}
 		return cpt;
 	}
-
 
 
 	public String toString(){
